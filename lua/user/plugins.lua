@@ -58,10 +58,15 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
+  use "github/copilot.vim"
+  use "mg979/vim-visual-multi"
+  use "tpope/vim-surround"
+  use "psliwka/vim-smoothie"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
+  -- use "lunarvim/darkplus.nvim"
+  use "dracula/vim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
