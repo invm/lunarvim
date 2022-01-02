@@ -25,11 +25,11 @@ keymap("n", "<A-j>", "<C-w>j", opts)
 keymap("n", "<A-k>", "<C-w>k", opts)
 keymap("n", "<A-l>", "<C-w>l", opts)
 
--- Resize with arrows
-keymap("n", "<A-Up>", ":resize +2<CR>", opts)
-keymap("n", "<A-Down>", ":resize -2<CR>", opts)
-keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
+-- Resize with arrows -- TODO: add resizes, the key clash with visual multi
+keymap("n", "<A-S-Up>", ":resize +5<CR>", opts)
+keymap("n", "<A-S-Down>", ":resize -5<CR>", opts)
+keymap("n", "<A-S-Left>", ":vertical resize -5<CR>", opts)
+keymap("n", "<A-S-Right>", ":vertical resize +5<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -42,10 +42,17 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Insert --
 -- Press jk fast to enter
 -- keymap("i", "jj", "<ESC>", opts)
+
+
+-- naviagte in insert and command mode with ctrl
 keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
 keymap("i", "<C-k>", "<Up>", opts)
+keymap("c", "<C-h>", "<Left>", {})
+keymap("c", "<C-j>", "<Down>", {})
+keymap("c", "<C-l>", "<Right>", {})
+keymap("c", "<C-k>", "<Up>", {})
 
 -- Visual --
 -- Stay in indent mode
