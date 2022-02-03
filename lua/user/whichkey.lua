@@ -93,7 +93,7 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
   },
-  ["f"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["f"] = { "<cmd>Telescope live_grep <cr>", "Find Text" },
   ["F"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 

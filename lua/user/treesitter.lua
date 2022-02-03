@@ -2,6 +2,7 @@ local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
   return
 end
+-- require'nvim-treesitter.install'.compilers = { "gcc" } -- might be needed on mac with m1
 
 configs.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages

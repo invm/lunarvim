@@ -62,6 +62,9 @@ return packer.startup(function(use)
   use "mg979/vim-visual-multi"
   use "tpope/vim-surround"
   use "psliwka/vim-smoothie"
+  use "ellisonleao/glow.nvim" -- read md files directly from vim
+  use 'ray-x/go.nvim' -- go support
+  use 'gko/vim-coloresque' -- view colors in vim
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

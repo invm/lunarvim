@@ -18,6 +18,9 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Command --
+keymap("c", "Q", ":q", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<A-h>", "<C-w>h", opts)
