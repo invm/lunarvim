@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use "ellisonleao/glow.nvim" -- read md files directly from vim
   use 'ray-x/go.nvim' -- go support
   use 'gko/vim-coloresque' -- view colors in vim
+	use 'fatih/vim-go'
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
