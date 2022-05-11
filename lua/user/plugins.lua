@@ -51,7 +51,7 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
+  -- use "akinsho/toggleterm.nvim" -- terminal in neovim
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -63,12 +63,13 @@ return packer.startup(function(use)
   use "tpope/vim-surround"
   use "psliwka/vim-smoothie"
   use "ellisonleao/glow.nvim" -- read md files directly from vim
-  use 'ray-x/go.nvim' -- go support
   use 'gko/vim-coloresque' -- view colors in vim
-	use 'fatih/vim-go'
+	use 'mfussenegger/nvim-dap' -- debugger 
+	use 'fatih/vim-go' -- go support
+	-- use 'leoluz/nvim-dap-go'
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   -- use "lunarvim/darkplus.nvim"
   use "dracula/vim"
 

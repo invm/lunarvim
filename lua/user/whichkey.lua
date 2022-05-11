@@ -80,7 +80,7 @@ local opts = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  ["G"] = { "<cmd>:Glow<cr>", "Glow" },
+	["G"] = { "<cmd>:Glow<cr><C-w>|<cr><C-w>_<cr>", "Glow" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",

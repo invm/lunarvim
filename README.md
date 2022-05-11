@@ -17,6 +17,12 @@ Run `nvim` and wait for the plugins to be installed
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
 
+## Debuggers
+
+### Go
+[Delve](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Go)
+[nvim-dap-go](https://github.com/leoluz/nvim-dap-go)
+
 ## Get healthy
 
 Open `nvim` and enter the following:
