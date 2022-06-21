@@ -14,9 +14,9 @@ local setup = {
     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
     -- No actual key bindings are created
     presets = {
-      operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-      motions = false, -- adds help for motions
-      text_objects = false, -- help for text objects triggered after entering an operator
+      operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+      motions = true, -- adds help for motions
+      text_objects = true, -- help for text objects triggered after entering an operator
       windows = true, -- default bindings on <c-w>
       nav = true, -- misc bindings to work with windows
       z = true, -- bindings for folds, spelling and others prefixed with z
@@ -78,6 +78,17 @@ local opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
+
+function reload_config()
+	local paths = vim.split(vim.fn.glob('~/.config/nvim/lua/*/*lua'), '\n')
+
+	for i, file in pairs(paths) do
+		vim.cmd('source ' .. file)
+	end
+
+  vim.api.nvim_echo({{"Done", 'None'}}, false, {})
+end
+
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["G"] = { "<cmd>:Glow<cr><C-w>|<cr><C-w>_<cr>", "Glow" },
@@ -96,6 +107,7 @@ local mappings = {
     "Find files",
   },
   ["f"] = { "<cmd>Telescope live_grep <cr>", "Find Text" },
+	["X"] = { "<cmd>lua reload_config()<CR>", "Reload config" },
   ["F"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 

@@ -18,6 +18,19 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- dap
+keymap("n", "<F2>", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<F6>", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
+keymap("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
+
+-- Presentation mode
+keymap("n", "<F3>", ":lua prev_slide()<CR>", opts)
+keymap("n", "<F4>", ":lua next_slide()<CR>", opts)
+keymap("n", "<F9>", ":lua reset_presentation()<CR>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<A-h>", "<C-w>h", opts)
