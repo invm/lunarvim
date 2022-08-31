@@ -21,8 +21,4 @@ require "user.whichkey"
 require "user.comment"
 require "user.autocommands"
 require "user.presentation"
-
-
-
-require "user.illuminate"
 require "user.dap"
