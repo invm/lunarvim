@@ -1,14 +1,6 @@
- vim.cmd [[
- try
-   colorscheme onedark
-   if exists('+termguicolors')
-     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-     set termguicolors
-     highlight Normal cterm=NONE ctermbg=17 gui=NONE guibg=#282a36
-   endif
- catch /^Vim\%((\a\+)\)\=:E185/
-   colorscheme default
-   set background=dark
- endtry
- ]]
+local colorscheme = "darkplus"
+
+local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not status_ok then
+  return
+end

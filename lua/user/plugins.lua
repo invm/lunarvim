@@ -42,8 +42,8 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
@@ -64,7 +64,6 @@ return packer.startup(function(use)
   use "psliwka/vim-smoothie"
   use "ellisonleao/glow.nvim" -- read md files directly from vim
   use 'gko/vim-coloresque' -- view colors in vim
-	use 'mfussenegger/nvim-dap' -- debugger 
 	use 'fatih/vim-go' -- go support
 	-- use 'leoluz/nvim-dap-go'
 
@@ -72,7 +71,8 @@ return packer.startup(function(use)
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   -- use "lunarvim/darkplus.nvim"
   use "dracula/vim"
-	use 'navarasu/onedark.nvim'
+	use "navarasu/onedark.nvim"
+  use "folke/tokyonight.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -81,6 +81,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -89,9 +90,9 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-
+  use "RRethy/vim-illuminate"
+  
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 
@@ -104,6 +105,11 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+   -- DAP
+   use "mfussenegger/nvim-dap"
+   use "rcarriga/nvim-dap-ui"
+   use "ravenxrz/DAPInstall.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
