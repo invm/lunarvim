@@ -108,7 +108,7 @@ local mappings = {
   },
   ["f"] = { "<cmd>Telescope live_grep <cr>", "Find Text" },
 	["X"] = { "<cmd>lua reload_config()<CR>", "Reload config" },
-  ["F"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+  ["F"] = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
   p = {
