@@ -65,7 +65,6 @@ return packer.startup(function(use)
   use "ellisonleao/glow.nvim" -- read md files directly from vim
   use 'gko/vim-coloresque' -- view colors in vim
 	use 'fatih/vim-go' -- go support
-	-- use 'leoluz/nvim-dap-go'
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -92,7 +91,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "RRethy/vim-illuminate"
-  
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 
@@ -109,7 +108,6 @@ return packer.startup(function(use)
    -- DAP
    use "mfussenegger/nvim-dap"
    use "rcarriga/nvim-dap-ui"
-   use "ravenxrz/DAPInstall.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

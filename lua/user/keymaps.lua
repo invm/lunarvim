@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -27,9 +25,9 @@ keymap("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
 
 -- Presentation mode
-keymap("n", "<F3>", ":lua prev_slide()<CR>", opts)
-keymap("n", "<F4>", ":lua next_slide()<CR>", opts)
-keymap("n", "<F9>", ":lua reset_presentation()<CR>", opts)
+keymap("n", "<F3>", ":lua Prev_slide()<CR>", opts)
+keymap("n", "<F4>", ":lua Next_slide()<CR>", opts)
+keymap("n", "<F9>", ":lua Reset_presentation()<CR>", opts)
 
 -- Normal --
 -- Better window navigation

@@ -79,16 +79,6 @@ local opts = {
 }
 
 
-function reload_config()
-	local paths = vim.split(vim.fn.glob('~/.config/nvim/lua/*/*lua'), '\n')
-
-	for i, file in pairs(paths) do
-		vim.cmd('source ' .. file)
-	end
-
-  vim.api.nvim_echo({{"Done", 'None'}}, false, {})
-end
-
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["G"] = { "<cmd>:Glow<cr><C-w>|<cr><C-w>_<cr>", "Glow" },
@@ -100,15 +90,14 @@ local mappings = {
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["e"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
   },
   ["f"] = { "<cmd>Telescope live_grep <cr>", "Find Text" },
-	["X"] = { "<cmd>lua reload_config()<CR>", "Reload config" },
-  ["F"] = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
+  ["x"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics" },
+  ["F"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
   p = {

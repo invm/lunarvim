@@ -6,16 +6,16 @@
 
 local EXT = 'md'
 
-global = {
+local state = {
 	index = 0,
 	path = '',
 	glow_open = false,
 }
 
-function reset_presentation()
-	global.index = 0
-	global.path = ''
-	global.glow_open = false
+function Reset_presentation()
+	state.index = 0
+	state.path = ''
+	state.glow_open = false
 end
 
 local function t(str)
@@ -23,58 +23,61 @@ local function t(str)
 end
 
 -- returns name of current open buffer
-function filename(path)
+
+function Prev_slide()
+	if state.path == '' then
+		state.path = Presentation.filepath(vim.fn.expand('%'))
+	end
+
+	local prev_idx = state.index - 1
+	local prev = state.path .. prev_idx .. '.' .. EXT
+	local exists = Presentation.file_exists(prev)
+	if exists then
+		Presentation.open_file(prev)
+		state.index = prev_idx
+	end
+end
+
+function Next_slide()
+	if state.path == '' then
+		state.path = Presentation.filepath(vim.fn.expand('%'))
+	end
+	--
+	local next_idx = state.index + 1
+	local next = state.path .. next_idx .. '.' .. EXT
+	local exists = Presentation.file_exists(next)
+	if exists then
+		Presentation.open_file(next)
+		state.index = next_idx
+	end
+end
+
+Presentation = {}
+
+function Presentation.filename(path)
 	return path:match("[^/]*.$")
 end
 
 -- returns path to current open buffer
-function filepath(path) 
+function Presentation.filepath(path)
 	return path:match[[^@?(.*[\/])[^\/]-$]]
 end
 
-function prev_slide() 
-	if global.path == '' then
-		global.path = filepath(vim.fn.expand('%')) 
-	end
-
-	local prev_idx = global.index - 1
-	local prev = global.path .. prev_idx .. '.' .. EXT
-	local exists = file_exists(prev)
-	if exists then
-		open_file(prev)
-		global.index = prev_idx
-	end 
-end
-
-function next_slide() 
-	if global.path == '' then
-		global.path = filepath(vim.fn.expand('%')) 
-	end
-	--
-	local next_idx = global.index + 1
-	local next = global.path .. next_idx .. '.' .. EXT
-	local exists = file_exists(next)
-	if exists then 
-		open_file(next)
-		global.index = next_idx
-	end 
-end
-
-function open_file(file)
-	if global.glow_open == true then
+function Presentation.open_file(file)
+	if state.glow_open == true then
 		vim.cmd(':Glow')
-		global.glow_open = false
+		state.glow_open = false
 	end
 	vim.cmd(':e ' .. file)
-	if global.glow_open == false then
+	if state.glow_open == false then
 		vim.cmd(':Glow')
 		vim.cmd(t('normal <C-w>|<CR>'))
 		vim.cmd(t('normal <C-w>_<CR>'))
-		global.glow_open = true
+		state.glow_open = true
 	end
 end
 
-function file_exists(name)
+function Presentation.file_exists(name)
    local f=io.open(name,"r")
    if f~=nil then io.close(f) return true else return false end
 end

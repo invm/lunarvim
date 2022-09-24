@@ -17,8 +17,31 @@ dap_install.setup {}
 
 dap_install.config("python", {})
 dap_install.config("jsnode", {})
--- add other configs here
 
+-- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript
+dap.adapters.node2 = {
+  type = 'executable';
+  command = 'node';
+  args = {os.getenv('HOME') .. '/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js'}
+}
+
+-- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Go
+dap.adapters.go = {
+  type = 'executable';
+  command = 'node';
+  args = {os.getenv('HOME') .. '/vscode-go/dist/debugAdapter.js'};
+}
+
+dap.configurations.go = {
+  {
+    type = 'go';
+    name = 'Debug';
+    request = 'launch';
+    showLog = false;
+    program = "${file}";
+    dlvToolPath = "/home/mike/go/bin/dlv"
+  },
+}
 dap.configurations.javascript = {{
     name = 'Launch',
     type = 'node2',
