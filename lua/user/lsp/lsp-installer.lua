@@ -13,7 +13,8 @@ local servers = {
   "jsonls",
   "yamlls",
   "gopls",
-  "grammarly"
+  "grammarly",
+  "astro"
 }
 
 lsp_installer.setup()

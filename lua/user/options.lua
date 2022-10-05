@@ -47,5 +47,9 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+--[[ vim.g.copilot_assume_mapped = true ]]
+--[[ vim.g.copilot_no_tab_map = true ]]
+--[[ vim.api.nvim_set_keymap("i", "<C-c>", 'copilot#Accept("<CR>")', { silent = true, expr = true }) ]]
+vim.g.astro_typescript = 'enable'
+vim.g.astro_stylus = 'enable'
+

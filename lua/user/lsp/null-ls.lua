@@ -10,10 +10,11 @@ local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
     debug = false,
-    sources = {formatting.prettier.with({
-        extra_args = {"--stdin", "--parser", "typescript", "--use-tabs", "--single-quote", "--print-width", "80",
-                      "--bracket-same-line", "true", "--trailing-comma", "none"}
-    }), formatting.black.with({
-        extra_args = {"--fast"}
-    }), formatting.stylua, diagnostics.flake8}
+    sources = {
+    formatting.prettier.with({ extra_args = {"--stdin", "--parser",
+      "typescript", "--use-tabs", "--single-quote", "--print-width", "80",
+      "--bracket-same-line", "true", "--trailing-comma", "none"} }),
+    formatting.black.with({ extra_args = {"--fast"} }),
+    formatting.stylua,
+    diagnostics.flake8}
 })
