@@ -53,6 +53,7 @@ nvim_tree.setup {
       error = "",
     },
   },
+  open_on_setup = true,
   view = {
     side = "left",
     mappings = {
