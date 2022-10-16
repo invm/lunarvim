@@ -67,6 +67,7 @@ return packer.startup(function(use)
 	use 'fatih/vim-go' -- go support
   use 'wuelnerdotexe/vim-astro'
   use 'wavded/vim-stylus'
+  use 'ggandor/leap.nvim'
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
