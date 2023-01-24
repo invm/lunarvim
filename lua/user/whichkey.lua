@@ -97,7 +97,8 @@ local mappings = {
   },
   ["f"] = { "<cmd>Telescope live_grep <cr>", "Find Text" },
   ["x"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line diagnostics" },
-  ["F"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+  ["E"] = { "<cmd>EslintFixAll<cr>", "Format" },
+  ["F"] = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
   p = {
@@ -139,7 +140,7 @@ local mappings = {
       "<cmd>Telescope diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {

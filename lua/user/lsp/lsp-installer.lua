@@ -15,7 +15,8 @@ local servers = {
   "gopls",
   "grammarly",
   "astro",
-  "eslint"
+  "eslint",
+  "prismals",
 }
 
 lsp_installer.setup()

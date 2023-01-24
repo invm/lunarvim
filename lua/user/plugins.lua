@@ -67,7 +67,6 @@ return packer.startup(function(use)
 	use 'fatih/vim-go' -- go support
   use 'wuelnerdotexe/vim-astro'
   use 'wavded/vim-stylus'
-  use 'ggandor/leap.nvim'
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -76,6 +75,10 @@ return packer.startup(function(use)
   use "dracula/vim"
 	use "navarasu/onedark.nvim"
   use "folke/tokyonight.nvim"
+  use {
+      'uloco/bluloco.nvim',
+      requires = { 'rktjmp/lush.nvim' }
+  }
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
