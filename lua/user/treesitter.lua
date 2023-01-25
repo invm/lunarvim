@@ -6,7 +6,7 @@ end
 -- require'nvim-treesitter.install'.compilers = { "gcc" } -- might be needed on mac with m1 chip
 
 configs.setup({
-	ensure_installed = "all", -- one of "all" or a list of languages
+	ensure_installed = "", -- one of "all" or a list of languages
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
