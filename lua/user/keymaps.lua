@@ -19,7 +19,8 @@ vim.g.maplocalleader = " "
 -- dap
 keymap("n", "<F2>", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F6>", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
+keymap("n", "<F6>", "<Cmd>lua require'dapui'.eval()<CR>", opts)
+keymap("n", "<F9>", "<Cmd>lua require'dapui'.toggle()<CR>", opts)
 keymap("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
@@ -27,7 +28,7 @@ keymap("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
 -- Presentation mode
 keymap("n", "<F3>", ":lua Prev_slide()<CR>", opts)
 keymap("n", "<F4>", ":lua Next_slide()<CR>", opts)
-keymap("n", "<F9>", ":lua Reset_presentation()<CR>", opts)
+--[[ keymap("n", "<F9>", ":lua Reset_presentation()<CR>", opts) ]]
 
 -- Normal --
 -- Better window navigation

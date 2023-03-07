@@ -74,7 +74,6 @@ return packer.startup(function(use)
   use 'Shatur/neovim-ayu'
   use "dracula/vim"
 	use "navarasu/onedark.nvim"
-  use "folke/tokyonight.nvim"
   use {
       'uloco/bluloco.nvim',
       requires = { 'rktjmp/lush.nvim' }
